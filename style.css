@@ -1,0 +1,171 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #525252;
+    color: #333;
+    text-align: center;
+    padding: 0px;
+    margin: 0px;
+}
+p {
+    margin: 0px;
+    padding: 0px;
+}
+.container {
+    width: 100%;
+    padding: 40px;
+    padding-top: 68px;
+    padding-bottom: 40px;
+    background-color: #d9d9d9;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.website-name {
+    font-style: normal;
+    font-weight: 700;
+    font-size: min(2em, 4.5cqw);
+    line-height: 49px;
+    letter-spacing: 0.05em;
+    color: #525252;
+    margin: 0px;
+}
+.logo-video-container {
+    position: relative;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    overflow: hidden; /* Clip any overflowing video */
+    border: 1px solid #b5b5b5; /* Add a 1px solid grey border */
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    width: 308px;
+    background-color: #c6c6c6;
+}
+.logo-container {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    transform: scale(0);
+    opacity: 0;
+    /* Start scaled down to nothing */
+    animation: centralExpansion 10s ease-out forwards 0.5s;
+    z-index: 20; /* Ensure logo is on top */
+}
+@keyframes centralExpansion {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    8% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    25% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    30% {
+        opacity: 0;
+        transform: scale(1);
+    }
+
+    75% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+}
+.video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 180px;
+    z-index: 1; /* Behind the logo */
+    opacity: 0;
+    animation: appearAfterLogo 10s ease-out forwards 0.5s;
+}
+@keyframes appearAfterLogo {
+    0% {
+        opacity: 0;
+    }
+
+    25% {
+        opacity: 0;
+    }
+
+    35% {
+        opacity: 1;
+    }
+
+    70% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 0;
+    }
+}
+video {
+    /* width: 300px; */
+    height: 180px;
+    z-index: 1; /* Behind the logo */
+    object-fit: cover; /* Prevents distortion */
+}
+.coming-soon-container {
+    margin-top: 0px;
+    margin-bottom: 40px;
+}
+.coming-soon {
+    font-family: 'Outfit', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 40px;
+    letter-spacing: 0.15em;
+    color: #525252;
+    padding: 0;
+    margin: 0;
+}
+.get-in-touch {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 27px;
+    letter-spacing: 0.05em;
+    color: #525252;
+    margin-bottom: 10px;
+}
+.email {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: 0.05em;
+    color: #525252;
+    text-decoration: none;
+    margin-bottom: 2px;
+}
+.email:hover {
+    text-decoration: underline;
+}
+.phone {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: 0.05em;
+    color: #525252;
+    text-decoration: none;
+}
