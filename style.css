@@ -10,6 +10,7 @@ body {
     text-align: center;
     padding: 0px;
     margin: 0px;
+    height: 100%;
 }
 p {
     margin: 0px;
@@ -26,6 +27,7 @@ p {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin: 0px;
 }
 .website-name {
     font-style: normal;
@@ -131,7 +133,7 @@ video {
     font-family: 'Outfit', sans-serif;
     font-style: normal;
     font-weight: 700;
-    font-size: min(2.5em, 4.5cqw);
+    font-size: min(3em, 5.5cqw);
     line-height: min(1.25em, 4.5cqw + 4px);
     letter-spacing: 0.15em;
     color: #525252;
