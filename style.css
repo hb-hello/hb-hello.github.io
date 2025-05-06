@@ -131,8 +131,8 @@ video {
     font-family: 'Outfit', sans-serif;
     font-style: normal;
     font-weight: 700;
-    font-size: 32px;
-    line-height: 40px;
+    font-size: min(2.5em, 4.5cqw);
+    line-height: min(1.25em, 4.5cqw + 4px);
     letter-spacing: 0.15em;
     color: #525252;
     padding: 0;
@@ -140,9 +140,9 @@ video {
 }
 .get-in-touch {
     font-style: normal;
-    font-weight: 700;
-    font-size: 28px;
-    line-height: 27px;
+    font-weight: 600;
+    font-size: min(1.5em, 4.5cqw);
+    line-height: min(1.5em, 4.5cqw);
     letter-spacing: 0.05em;
     color: #525252;
     margin-bottom: 10px;
@@ -150,12 +150,12 @@ video {
 .email {
     font-style: normal;
     font-weight: 700;
-    font-size: 24px;
-    line-height: 32px;
+    font-size: min(1.25em, 4.5cqw);
+    line-height: min(1.25em, 4.5cqw);
     letter-spacing: 0.05em;
     color: #525252;
     text-decoration: none;
-    margin-bottom: 2px;
+    margin-bottom: 6px;
 }
 .email:hover {
     text-decoration: underline;
@@ -163,8 +163,8 @@ video {
 .phone {
     font-style: normal;
     font-weight: 700;
-    font-size: 24px;
-    line-height: 32px;
+    font-size: min(1.25em, 4.5cqw);
+    line-height: min(1.25em, 4.5cqw);
     letter-spacing: 0.05em;
     color: #525252;
     text-decoration: none;
