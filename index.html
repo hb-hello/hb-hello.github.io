@@ -1,35 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Launching Soon! Thirty Trillion India Fincap Advisors is an investment banking firm, focusing on growth funding and M&A advisory to mid-market companies.">
-    <title>Coming Soon - Thirty Trillion India Fincap Advisors LLP</title>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="dev">
+    <title>mort.</title>
+
+    <!-- Pico.css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+
+    <!-- Fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+
 <body>
-    <div class="container">
-        <p class="website-name">www.thirtytrillionindiafincap.com</p>
-        <div class="logo-video-container">
-            <div class="video-container">
-                <video autoplay loop muted playsinline>
-                    <source src="assets\indian_flag.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-            <div class="logo-container">
-                <img src="assets\MB_VisitingCard-03 3.png" alt="Thirty Trillion India Fincap Advisors LLP Logo" height="144px">
-            </div>
-        </div>
-        <div class="coming-soon-container">
-            <h1 class="coming-soon">Launching soon... </h1>
-        </div>
-        <div class="contact">
-            <div class="get-in-touch">Meanwhile, get in touch with</div>
-            <div class="email"><a href="mailto:info@ttifincap.com" class="email">info@ttifincap.com</a></div>
-            <div class="phone">+91 93229 72830</div>
-        </div>
-    </div>
+
+    <!-- Header -->
+    <header class="container">
+        <nav>
+            <ul><strong>who am i?</strong></ul>
+            <ul>
+                <li><a href="#" class="primary">about</a></li>
+                <!-- <li><a href="#" class="secondary">skills</a></li> -->
+                <li><a href="#" class="secondary">timeline</a></li>
+                <li><a href="#" class="secondary">projects</a></li>
+            </ul>
+        </nav>
+        <hr>
+        <hgroup>
+            <h3>Construction in progress...🚧🚧 </h3>
+            <p>in a few hours</p>
+        </hgroup>
+        <hr>
+    </header>
+
+    <!-- Main -->
+    <main class="container">
+
+        <!-- About -->
+        <section id="about">
+            <h3>About</h3>
+            <p>I am a software engineer with a passion for system design and web development.
+            </p>
+            <p>Currently, I am a graduate student at <em data-tooltip="🌐 Stony Brook, NY">Stony Brook
+                    University</em> majoring in computer science with the intention to delve deeper into systems and
+                work on some cool research along the way.</p>
+            <p>Previously, I was a senior data engineer at <em data-tooltip="🌐 Pune, India">ZS Associates</em>
+                developing data products and web apps for pharmaceutical organizations</p>
+        </section>
+
+        <hr>
+
+        <!-- Work Experience -->
+        <section id="work-experience">
+            <h3>Work Experience</h3>
+
+            <article>
+                <header>
+                    <hgroup style="margin-bottom: 0;">
+                        <em>Senior Data Engineer at <b>ZS Associates</b></em>
+                        <nav style="margin-left: 0.5em;margin-right: 0.5em;">
+                            <ul><i class="fa-solid fa-location-dot" style="margin-right: 0.25em;"></i><span>Pune,
+                                    India</span></ul>
+                            <ul>July 2023 - July 2025</ul>
+                        </nav>
+                    </hgroup>
+                </header>
+                <ul>
+                    <li>Enabled GenAI-based insights and auto-complete features within a customer-facing SaaS product.
+                        Leveraged gemini and gpt-4 APIs to automate manual research and documentation workflows</li>
+                    <li>Created data connectors and automated data loading using JavaScript for 20+ data sources saving
+                        2-3 weeks of manual effort and reducing rework and errors by over 30%</li>
+                    <li>Led a team of 4 to develop a feedback tool using Power Apps and Azure SQL to facilitate seamless
+                        data change requests from business users. With a built-in conflict resolution portal, this tool
+                        saved over 2 weeks of data cleaning effort every quarter</li>
+                    <li>Improved operational efficiency across multiple data pipelines by automating weekly data
+                        ingestion, DQM checks and complex data transformation processes using Snowflake & dbt. This
+                        reduced client turnaround time from 18 hours a week to just 1 hour per week</li>
+                </ul>
+            </article>
+
+            <article>
+                <header>
+                    <hgroup style="margin-bottom: 0;">
+                        <em>Data Engineer at <b>ZS Associates</b></em>
+                        <nav style="margin-left: 0.5em;margin-right: 0.5em;">
+                            <ul><i class="fa-solid fa-location-dot" style="margin-right: 0.25em;"></i><span>Pune,
+                                    India</span></ul>
+                            <ul>November 2020 - July 2023</ul>
+                        </nav>
+                    </hgroup>
+                </header>
+                <ul>
+                    <li>Worked on a Node.js & Angular web app that processes sales & market data to generate forecast
+                        scenarios, majorly improving rebate contract evaluation & increasing ROI by more than 20%</li>
+                    <li>Implemented interactive network visualizer tools in JavaScript using d3.js and Neo4j, empowering
+                        users to explore & effectively analyze customer networks in a much more intuitive and
+                        user-friendly manner</li>
+                    <li>Developed robust data transformation processes across platforms such as Snowflake, Databricks,
+                        dbt and Python centralizing & standardizing client data management to enhance downstream
+                        analytics and improve turnaround time by more than 75%</li>
+                    <li>Leveraged PySpark to process large machine-readable JSON files (dozens of files ranging from 4TB
+                        to 30TB+) containing healthcare pricing data to help set up effective rebate contracts and
+                        decrease costs</li>
+                </ul>
+            </article>
+
+            <article>
+                <header>
+                    <hgroup style="margin-bottom: 0;">
+                        <em>Web Development Intern at <b>AnalyticsDomain</b></em>
+                        <nav style="margin-left: 0.5em;margin-right: 0.5em;">
+                            <ul><i class="fa-solid fa-location-dot" style="margin-right: 0.25em;"></i><span>Pune,
+                                    India</span></ul>
+                            <ul>July 2023 - July 2025</ul>
+                        </nav>
+                    </hgroup>
+                </header>
+                <ul>
+                    <li>Developed & maintained two web applications using Python Django framework and MySQL database,
+                        ensuring scalability & performance</li>
+                    <li>Enhanced user experience & engagement by implementing interactive features with JavaScript</li>
+                </ul>
+            </article>
+
+        </section>
+
+        <hr>
+
+        <!-- Co-curriculars -->
+        <section id="co-curriculars">
+            <h3>Co-curriculars</h3>
+
+            <article>
+                <header>
+                    <hgroup style="margin-bottom: 0;">
+                        <em>PR Organizer at <b>MIT-WPU Aarohan</b></em>
+                        <nav style="margin-left: 0.5em;margin-right: 0.5em;">
+                            <ul><i class="fa-solid fa-location-dot" style="margin-right: 0.25em;"></i><span>Pune,
+                                    India</span></ul>
+                            <ul>December 2017 - May 2019</ul>
+                        </nav>
+                    </hgroup>
+                </header>
+                <ul>
+                    <li>Consistently created engaging social media content using Adobe After Effects and CorelDraw, resulting in a 40% increase in follower count and online engagement</li>
+                    <li>Publicised the cultural fest in public areas and other colleges in the city and enrolled participants for various competitions</li>
+                    <li>Worked as a volunteer in Aarohan’s Run for a Cause marathon which involved participation registration, distributing goodies, setting up directions along the route, etc.</li>
+                </ul>
+            </article>
+
+
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="container">
+        <small>© 2025 <a href="mailto:biyanihritwik@gmail.com">biyanihritwik@gmail.com</a></small>
+    </footer>
+
 </body>
+
 </html>
