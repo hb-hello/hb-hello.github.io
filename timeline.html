@@ -9,152 +9,62 @@
 
     <!-- Pico.css -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+    <link rel="stylesheet" href="styles/common.css">
+    <link rel="stylesheet" href="styles/timeline.css">
 
     <!-- Fontawesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Scripts -->
+    <script src="scripts/Markdown.Converter.js"></script>
+    <script src="scripts/Markdown.Sanitizer.js"></script>
+    <script src="scripts/timeline.js"></script>
 </head>
-
-<style>
-    .timeline {
-        /* overflow: hidden; */
-        padding: var(--space-lg) 0;
-    }
-
-    .timeline-container {
-        position: relative;
-        padding: var(--space-md) 0;
-
-        &::before {
-            /* this is the timeline vertical line */
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0px;
-            height: 100%;
-            width: 4px;
-            background: var(--pico-muted-color);
-        }
-    }
-
-    .timeline-block {
-        display: flex;
-        padding-top: var(--pico-block-spacing-vertical)
-        /* @include breakpoint(md) {
-            &:nth-child(even) {
-                flex-direction: row-reverse; // for even blocks -> lay out content from right to left
-            }
-        } */
-
-    }
-
-    .timeline-dot {
-        display: flex;
-        justify-content: center;
-        align-items: top;
-        position: absolute;
-        flex-shrink: 0;
-        z-index: 10;
-
-
-        /* @include breakpoint(md) {
-            order: 1; // flex order -> place the image after cd-timeline__content
-        } */
-    }
-
-    .timeline-circle {
-        margin-left: auto;
-        align-self: center;
-        color: var(--pico-muted-color);
-        transform: translateX(calc(-50% + 2px)) translateY(-55%) scale(105%);
-    }
-
-    .timeline-icon {
-        color: var(--pico-muted-color);
-        margin-right:1em;
-        margin-left:0.25em;
-    }
-</style>
 
 <body>
 
     <!-- Header -->
-    <header class="container">
-        <nav>
+    <header class="nav-header">
+        <nav class="navbar">
             <ul><strong>who am i?</strong></ul>
             <ul>
                 <li><a href="/index.html" class="secondary">about</a></li>
-                <li><a href="#" class="primary">timeline</a></li>
+                <li><a href="/timeline.html" class="primary">timeline</a></li>
                 <li><a href="/projects.html" class="secondary">projects</a></li>
             </ul>
         </nav>
+        <hr style="margin-bottom: 0;">
     </header>
 
     <!-- Main -->
-    <main class="container">
 
-        <section class="timeline">
-            <div class="container timeline-container">
-                <div class="timeline-block">
-                    <div class="timeline-dot">
-                        <!-- <img src="assets/img/cd-icon-picture.svg" alt="Picture"> -->
-                        <i class="fa-solid fa-circle timeline-circle"></i>
-                    </div>
-                    <article>
-                        <header><i class="fa-solid fa-calendar timeline-icon"></i><strong>2000</strong></header>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, ex odit quas alias repellat
-                            blanditiis, debitis tempore pariatur ipsa eum iste, non sapiente? Beatae eligendi, facilis
-                            temporibus harum enim totam?</p>
-                    </article>
-                </div>
+    <main class="container timeline">
 
-                <div class="timeline-block">
-                    <div class="timeline-dot">
-                        <!-- <img src="assets/img/cd-icon-picture.svg" alt="Picture"> -->
-                        <i class="fa-solid fa-circle timeline-circle"></i>
-                    </div>
-                    <article>
-                        <header><i class="fa-solid fa-calendar timeline-icon"></i><strong>January, 2017</strong></header>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, ex odit quas alias repellat
-                            blanditiis, debitis tempore pariatur ipsa eum iste, non sapiente? Beatae eligendi, facilis
-                            temporibus harum enim totam?</p>
-                    </article>
-                </div>
-
-                <div class="timeline-block">
-                    <div class="timeline-dot">
-                        <!-- <img src="assets/img/cd-icon-picture.svg" alt="Picture"> -->
-                        <i class="fa-solid fa-circle timeline-circle"></i>
-                    </div>
-                    <article>
-                        <header><i class="fa-solid fa-calendar timeline-icon"></i><strong>January, 2017</strong></header>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, ex odit quas alias repellat
-                            blanditiis, debitis tempore pariatur ipsa eum iste, non sapiente? Beatae eligendi, facilis
-                            temporibus harum enim totam?</p>
-                    </article>
-                </div>
-
-                <div class="timeline-block">
-                    <div class="timeline-dot">
-                        <!-- <img src="assets/img/cd-icon-picture.svg" alt="Picture"> -->
-                        <i class="fa-solid fa-circle timeline-circle"></i>
-                    </div>
-                    <article>
-                        <header><i class="fa-solid fa-calendar timeline-icon"></i><strong>2000</strong></header>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, ex odit quas alias repellat
-                            blanditiis, debitis tempore pariatur ipsa eum iste, non sapiente? Beatae eligendi, facilis
-                            temporibus harum enim totam?</p>
-                    </article>
-                </div>
+        <section class="timeline-section">
+            <div class="container timeline-container" id="timeline">
+                <!-- Timeline blocks will be injected from data/timeline.json -->
             </div>
         </section>
 
     </main>
 
+    <hr style="margin-top: 0;">
+
     <!-- Footer -->
     <footer class="container">
-        <small>© 2025 <a href="mailto:biyanihritwik@gmail.com">biyanihritwik@gmail.com</a></small>
+        <nav>
+            <ul>
+                <li class="footer-icon"><a href="https://www.linkedin.com/in/hritwikbiyani/" class="secondary"><i
+                            class="fa-brands fa-linkedin"></i></li>
+                <li class="footer-icon"><a href="https://github.com/users/hb-hello/" class="secondary"><i
+                            class="fa-brands fa-github"></i></li>
+                <li class="footer-icon"><a href="mailto:biyanihritwik@gmail.com" class="secondary"><i
+                            class="fa-solid fa-envelope"></i></li>
+            </ul>
+            <ul><small>© 2025 Hritwik Biyani</small></ul>
+        </nav>
     </footer>
 
 </body>

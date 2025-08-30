@@ -1,0 +1,64 @@
+.timeline {
+    margin-top: 0px;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.timeline-section {
+    /* overflow: hidden; */
+    padding: var(--space-lg) 0;
+    margin-bottom: 0;
+}
+
+.timeline-container {
+    position: relative;
+    padding: var(--space-md) 0px;
+    padding-top: 2em;
+    padding-bottom: 2em;
+
+    &::before {
+        /* this is the timeline vertical line */
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0px;
+        height: 100%;
+        width: 4px;
+        background: var(--pico-muted-color);
+    }
+}
+
+.timeline-block {
+    display: flex;
+    padding-top: var(--pico-block-spacing-vertical);
+    width: 100%;
+    flex-wrap: wrap;
+    justify-items: stretch;
+
+}
+
+.timeline-dot {
+    display: flex;
+    justify-content: center;
+    align-items: top;
+    position: absolute;
+    flex-shrink: 0;
+    z-index: 10;
+}
+
+.timeline-circle {
+    margin-left: auto;
+    align-self: center;
+    color: var(--pico-muted-color);
+    transform: translateX(calc(-50% + 2px)) translateY(-55%) scale(105%);
+}
+
+.timeline-icon {
+    color: var(--pico-muted-color);
+    margin-right: 1em;
+    margin-left: 0.25em;
+}
+
+article {
+    width: 100%;
+}
