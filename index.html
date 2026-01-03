@@ -15,6 +15,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="assets/sea.ico" />
 </head>
 
 <body>
@@ -39,13 +42,13 @@
         <!-- About -->
         <section id="about">
             <h3>About</h3>
-            <p>I am a software engineer with a passion for system design and web development.
+            <p>I am a software engineer with a passion for systems.
             </p>
             <p>Currently, I am a graduate student at <em data-tooltip="🌐 Stony Brook, NY">Stony Brook
                     University</em> majoring in computer science with the intention to delve deeper into systems and
                 work on some cool research along the way.</p>
             <p>Previously, I was a senior data engineer at <em data-tooltip="🌐 Pune, India">ZS Associates</em>
-                developing data products and web apps for pharmaceutical organizations</p>
+                developing data products and web apps for pharmaceutical organizations.</p>
         </section>
 
         <hr>
@@ -57,25 +60,8 @@
             <article>
                 <header>
                     <hgroup style="margin-bottom: 0;">
-                        <em>Teaching Assistant at <b>Stony Brook University</b></em>
-                        <nav style="margin-left: 0.5em;margin-right: 0.5em;">
-                            <ul><i class="fa-solid fa-location-dot" style="margin-right: 0.25em;"></i><span>Stony Brook,
-                                    New York</span></ul>
-                            <ul>September 2025 - Current</ul>
-                        </nav>
-                    </hgroup>
-                </header>
-                <ul>
-                    <li>Working as a teaching assistant for <em>CSE 337 - Scripting Languages</em>, which involves proctoring and grading student examinations</li>
-                    <li>Also conduct regular office hours for to clarify students' doubts and grade scripting assignments</li>
-                </ul>
-            </article>
-
-            <article>
-                <header>
-                    <hgroup style="margin-bottom: 0;">
                         <em>Senior Data Engineer at <b>ZS Associates</b></em>
-                        <nav style="margin-left: 0.5em;margin-right: 0.5em;">
+                        <nav style="margin-left: 0.5em; margin-right: 0.5em;  margin-bottom: 0.1em;">
                             <ul><i class="fa-solid fa-location-dot" style="margin-right: 0.25em;"></i><span>Pune,
                                     India</span></ul>
                             <ul>July 2023 - July 2025</ul>
@@ -83,16 +69,16 @@
                     </hgroup>
                 </header>
                 <ul>
-                    <li>Enabled GenAI-based insights and auto-complete features within a customer-facing SaaS product.
-                        Leveraged gemini and gpt-4 APIs to automate manual research and documentation workflows</li>
-                    <li>Created data connectors and automated data loading using JavaScript for 20+ data sources saving
-                        2-3 weeks of manual effort and reducing rework and errors by over 30%</li>
-                    <li>Led a team of 4 to develop a feedback tool using Power Apps and Azure SQL to facilitate seamless
-                        data change requests from business users. With a built-in conflict resolution portal, this tool
-                        saved over 2 weeks of data cleaning effort every quarter</li>
-                    <li>Improved operational efficiency across multiple data pipelines by automating weekly data
-                        ingestion, DQM checks and complex data transformation processes using Snowflake & dbt. This
-                        reduced client turnaround time from 18 hours a week to just 1 hour per week</li>
+                    <li>Developed a FastAPI service implementing advanced prompt engineering with LLMs (Gemini/GPT-4) to 
+                        deliver real-time, context-aware insights, streamlining complex research workflows for pharmaceutical KAMs.</li>
+                    <li>Engineered a batch-processing pipeline to automate data ingestion from 50+ sources (REST APIs, FTP, SQL),
+                         replacing manual form entry and reducing CRM onboarding time by 2-3 weeks per source.</li>
+                    <li>Led a team of 4 to build a scalable Data Change Request system using Azure Functions and 
+                        SQL Stored Procedures to handle high data volumes, processing 4,000+ requests and 
+                        saving ~40 hours of manual cleaning.</li>
+                    <li>Designed the data warehouse architecture and implemented data pipelines across various platforms 
+                        such as Snowflake, Databricks, dbt and Python for top-tier pharmaceutical clients, accelerating 
+                        commercial reporting and ad-hoc statistical analysis by over 50%.</li>
                 </ul>
             </article>
 
@@ -100,7 +86,7 @@
                 <header>
                     <hgroup style="margin-bottom: 0;">
                         <em>Data Engineer at <b>ZS Associates</b></em>
-                        <nav style="margin-left: 0.5em;margin-right: 0.5em;">
+                        <nav style="margin-left: 0.5em; margin-right: 0.5em;  margin-bottom: 0.1em;">
                             <ul><i class="fa-solid fa-location-dot" style="margin-right: 0.25em;"></i><span>Pune,
                                     India</span></ul>
                             <ul>November 2020 - July 2023</ul>
@@ -108,17 +94,17 @@
                     </hgroup>
                 </header>
                 <ul>
-                    <li>Worked on a Node.js & Angular web app that processes sales & market data to generate forecast
-                        scenarios, majorly improving rebate contract evaluation & increasing ROI by more than 20%</li>
-                    <li>Implemented interactive network visualizer tools in JavaScript using d3.js and Neo4j, empowering
-                        users to explore & effectively analyze customer networks in a much more intuitive and
-                        user-friendly manner</li>
+                    <li>Built a Node.js backend and Angular front-end for real-time contracting scenario analysis, 
+                        processing tens of thousands of rows via configurable algorithms to optimize pharma contract 
+                        selection and boost ROI by more than 20%.</li>
+                    <li>Developed a full-stack graph visualization tool (Neo4j/D3.js) to map complex health system 
+                        hierarchies (working with Veeva/IQVIA data), providing clear visibility into organized customer 
+                        groups for sales targeting, segmentation and reporting.</li>
                     <li>Developed robust data transformation processes across platforms such as Snowflake, Databricks,
                         dbt and Python centralizing & standardizing client data management to enhance downstream
-                        analytics and improve turnaround time by more than 75%</li>
-                    <li>Leveraged PySpark to process large machine-readable JSON files (dozens of files ranging from 4TB
-                        to 30TB+) containing healthcare pricing data to help set up effective rebate contracts and
-                        decrease costs</li>
+                        analytics and improve turnaround time by more than 75%.</li>
+                    <li>Engineered a scalable Spark pipeline to process 100TB+ of complex, nested JSON datasets, 
+                        utilizing strategic partitioning to optimize compute costs.</li>
                 </ul>
             </article>
 
@@ -126,17 +112,16 @@
                 <header>
                     <hgroup style="margin-bottom: 0;">
                         <em>Web Development Intern at <b>AnalyticsDomain</b></em>
-                        <nav style="margin-left: 0.5em;margin-right: 0.5em;">
+                        <nav style="margin-left: 0.5em; margin-right: 0.5em;  margin-bottom: 0.1em;">
                             <ul><i class="fa-solid fa-location-dot" style="margin-right: 0.25em;"></i><span>Pune,
                                     India</span></ul>
-                            <ul>July 2023 - July 2025</ul>
+                            <ul>February 2020 - May 2020</ul>
                         </nav>
                     </hgroup>
                 </header>
                 <ul>
-                    <li>Developed & maintained two web applications using Python Django framework and MySQL database,
-                        ensuring scalability & performance</li>
-                    <li>Enhanced user experience & engagement by implementing interactive features with JavaScript</li>
+                    <li>Designed and deployed Course and Event management applications with Python/Django, 
+                        enhancing the user experience for 100+ users with JavaScript-driven features like interactive quizzes and charts.</li>
                 </ul>
             </article>
 
@@ -151,8 +136,26 @@
             <article>
                 <header>
                     <hgroup style="margin-bottom: 0;">
+                        <em>Teaching Assistant at <b>Stony Brook University</b></em>
+                        <nav style="margin-left: 0.5em; margin-right: 0.5em;  margin-bottom: 0.1em;">
+                            <ul><i class="fa-solid fa-location-dot" style="margin-right: 0.25em;"></i><span>Stony Brook,
+                                    New York</span></ul>
+                            <ul>September 2025 - December 2025</ul>
+                        </nav>
+                    </hgroup>
+                </header>
+                <ul>
+                    <li>Worked as a teaching assistant for <em>CSE 337 - Scripting Languages</em>, which involves proctoring 
+                        and grading student examinations.</li>
+                    <li>Also conducted regular office hours to clarify students' doubts and grade scripting assignments.</li>
+                </ul>
+            </article>
+
+            <article>
+                <header>
+                    <hgroup style="margin-bottom: 0;">
                         <em>PR Organizer at <b>MIT-WPU Aarohan</b></em>
-                        <nav style="margin-left: 0.5em;margin-right: 0.5em;">
+                        <nav style="margin-left: 0.5em; margin-right: 0.5em;  margin-bottom: 0.1em;">
                             <ul><i class="fa-solid fa-location-dot" style="margin-right: 0.25em;"></i><span>Pune,
                                     India</span></ul>
                             <ul>December 2017 - May 2019</ul>
@@ -169,7 +172,6 @@
                 </ul>
             </article>
 
-
         </section>
 
     </main>
@@ -185,7 +187,7 @@
                 <li class="footer-icon"><a href="mailto:biyanihritwik@gmail.com" class="secondary"><i
                             class="fa-solid fa-envelope"></i></li>
             </ul>
-            <ul><small>© 2025 Hritwik Biyani</small></ul>
+            <ul><small>© 2026 Hritwik Biyani</small></ul>
         </nav>
     </footer>
 

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="dev">
-    <title>mort-projects.</title>
+    <title>projects.</title>
 
     <!-- Pico.css -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
@@ -15,6 +15,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="assets/sea.ico" />
 </head>
 
 <body>
@@ -35,7 +38,112 @@
 
     <!-- Main -->
     <main class="container">
-        <p style="color: var(--pico-muted-color)">Coming soon...</p>
+        <section id="projects">
+            <h3>Projects</h3>
+
+            <article>
+                <header>
+                    <hgroup style="margin-bottom: 0;">
+                        <nav style="margin-left: 0.5em; margin-right: 0.5em; margin-bottom: 0.1em;">
+                            <ul>
+                                <em>Distributed Consensus Protocol - Paxos</em>
+                            </ul>
+                            <ul style="--pico-color: var(--pico-muted-color)">
+                                <i class="fa-solid fa-code" style="margin-right: 0.5em; font-size: medium;"></i> 
+                                <span>Java</span>
+                            </ul>
+                        </nav>
+                        <nav style="margin-left: 0.5em; margin-right: 0.5em;">
+                            <ul>
+                                <i class="fa-brands fa-github" style="margin-right: 0.5em;"></i>
+                                <a href="https://github.com/hb-hello/cft-paxos/tree/main/stable-paxos">cft-paxos</a>
+                            </ul>
+                            <ul>August 2025 - September 2025</ul>
+                        </nav>
+                    </hgroup>
+                </header>
+                <ul>
+                    <li>Implemented a crash fault tolerant distributed banking system that uses a variant of Multi-Paxos
+                        protocol to replicate a transaction log and maintain consistent account balances across a 5-node
+                        cluster.
+                    </li>
+                    <li><a href="https://github.com/hb-hello/cft-paxos/tree/main/stable-paxos#notes"
+                            class="secondary"><i class="fa-solid fa-link"
+                                style="margin-right: 0.25em; opacity: 0.8; font-size: medium;"></i>Notes</a>
+                    </li>
+                </ul>
+            </article>
+
+            <article>
+                <header>
+                    <hgroup style="margin-bottom: 0;">
+                        <nav style="margin-left: 0.5em; margin-right: 0.5em; margin-bottom: 0.1em;">
+                            <ul>
+                                <em>Practical Byzantine Fault Tolerance (PBFT) Protocol</em>
+                            </ul>
+                            <ul style="--pico-color: var(--pico-muted-color)">
+                                <i class="fa-solid fa-code" style="margin-right: 0.5em; font-size: medium;"></i> 
+                                <span>Java</span>
+                            </ul>
+                        </nav>
+                        <nav style="margin-left: 0.5em; margin-right: 0.5em;">
+                            <ul>
+                                <i class="fa-brands fa-github" style="margin-right: 0.5em;"></i>
+                                <a href="https://github.com/hb-hello/linear-pbft">linear-pbft</a>
+                            </ul>
+                            <ul>September 2025 - October 2025</ul>
+                        </nav>
+                    </hgroup>
+                </header>
+                <ul>
+                    <li>Developed a high-throughput PBFT consensus protocol in Java featuring a collector node pattern
+                        to reduce communication overhead as well as prune message logs with Checkpointing and Threshold
+                        Signatures.</li>
+                    <li>Wrote extensive test cases to simulate network partitions, timing attacks, and equivocation,
+                        ensuring the protocol recovered correctly from Byzantine failures.</li>
+                    <li><a href="https://github.com/hb-hello/linear-pbft?tab=readme-ov-file#notes" class="secondary"><i
+                                class="fa-solid fa-link"
+                                style="margin-right: 0.25em; opacity: 0.8; font-size: medium;"></i>Notes</a>
+                    </li>
+                </ul>
+            </article>
+
+            <article>
+                <header>
+                    <hgroup style="margin-bottom: 0;">
+                        <nav style="margin-left: 0.5em; margin-right: 0.5em; margin-bottom: 0.1em;">
+                            <ul>
+                                <em>Sharded Key-Value Store with 2-Phase Commit and Paxos</em>
+                            </ul>
+                            <ul style="--pico-color: var(--pico-muted-color)">
+                                <i class="fa-solid fa-code" style="margin-right: 0.5em; font-size: medium;"></i> 
+                                <span>Java</span>
+                            </ul>
+                        </nav>
+                        <nav style="margin-left: 0.5em; margin-right: 0.5em;">
+                            <ul>
+                                <i class="fa-brands fa-github" style="margin-right: 0.5em;"></i>
+                                <a href="https://github.com/hb-hello/2pc-paxos">2pc-paxos</a>
+                            </ul>
+                            <ul>October 2025 - December 2025</ul>
+                        </nav>
+                    </hgroup>
+                </header>
+                <ul>
+                    <li>Built a distributed, in-memory key-value store in Java supporting cross-shard ACID transactions
+                        and linearizable consistency, with row-level locking for high performance.
+                    </li>
+                    <li>Implemented Multi-Paxos for intra-shard replication and Two-Phase Commit (2PC) for atomic
+                        cross-shard transactions, ensuring data integrity across distributed nodes</li>
+                    <li>Optimized for high throughput (~5000 TPS) using multi-threading and non-blocking I/O;
+                        implemented dynamic sharding and cluster reconfiguration to handle node failures and scaling.
+                    </li>
+                    <li><a href="https://github.com/hb-hello/2pc-paxos?tab=readme-ov-file#notes" class="secondary"><i
+                                class="fa-solid fa-link"
+                                style="margin-right: 0.25em; opacity: 0.8; font-size: medium;"></i>Notes</a></li>
+                </ul>
+            </article>
+        </section>
     </main>
 
     <!-- Footer -->
@@ -49,7 +157,7 @@
                 <li class="footer-icon"><a href="mailto:biyanihritwik@gmail.com" class="secondary"><i
                             class="fa-solid fa-envelope"></i></li>
             </ul>
-            <ul><small>© 2025 Hritwik Biyani</small></ul>
+            <ul><small>© 2026 Hritwik Biyani</small></ul>
         </nav>
     </footer>
 
