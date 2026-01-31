@@ -30,5 +30,13 @@
     {
         "date": "August, 2025",
         "content": "Joined *Stony Brook University* as a Master's student majoring in Computer Science."
+    },
+    {
+        "date": "September, 2025",
+        "content": "Became a Graduate Teaching Assistant for Scripting Languages (CSE 337) under Prof. Ritwik Bannerjee."
+    },
+    {
+        "date": "January, 2026",
+        "content": "Started working with Prof. Annie Liu as a Research Assistant coding with [DistAlgo](https://distalgo.cs.stonybrook.edu/)."
     }
 ]
