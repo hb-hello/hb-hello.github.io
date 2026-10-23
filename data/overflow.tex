@@ -1,0 +1,55 @@
+% Entries for the website that aren't on the resume PDF.
+% Same macros and [id] rules as resume.tex (see its "Content macros" block);
+% ids must not repeat ids in resume.tex. This file is never compiled, so it
+% needs no preamble. Move an entry into resume.tex (same id) to put it on the
+% PDF; its place on the website stays the same.
+%
+% Optional fields \tech, \repo, \notes and \location work as in resume.tex.
+%
+% To add bullets to an entry that is in resume.tex, give them their own id
+% here and attach them on the site with  extra=<id>  on that entry's marker.
+
+\section{EXPERIENCE}
+
+\begin{job}[answering-legal-swe-intern]
+  {Software Engineer Intern (Part-time)}{Answering Legal}{New York, NY (Remote)}{September 2026 -- Present}
+    \resumeItem{Building an AI evaluator that analyses the trend of caller sentiment over virtual receptionist phone calls}
+\end{job}
+
+\begin{job}[sbu-ta]
+  {Teaching Assistant}{Stony Brook University}{Stony Brook, NY}{September 2025 -- December 2025}
+    \resumeItem{Worked as a teaching assistant for \emph{CSE 337 - Scripting Languages}, which involves proctoring and grading student examinations.}
+    \resumeItem{Conducted regular office hours to clarify students' doubts and grade scripting assignments.}
+\end{job}
+
+\begin{job}[analyticsdomain-intern]
+  {Web Development Intern}{AnalyticsDomain}{Pune, India}{February 2020 -- May 2020}
+    \resumeItem{Designed and deployed Course and Event management applications with Python/Django, enhancing the user experience for 100+ users with JavaScript-driven features like interactive quizzes and charts.}
+\end{job}
+
+\begin{job}[aarohan-pr]
+  {PR Organizer}{MIT-WPU Aarohan}{Pune, India}{December 2017 -- May 2019}
+    \resumeItem{Consistently created engaging social media content using Adobe After Effects and CorelDraw, resulting in a 40\% increase in follower count and online engagement}
+    \resumeItem{Publicised the cultural fest in public areas and other colleges in the city and enrolled participants for various competitions}
+    \resumeItem{Worked as a volunteer in Aarohan's Run for a Cause marathon which involved participation registration, distributing goodies, setting up directions along the route, etc.}
+\end{job}
+
+
+\section{PROJECTS}
+
+\begin{project}[cft-paxos]
+  {Distributed Consensus Protocol - Paxos}{}{August 2025 -- September 2025}
+    \tech{Java}
+    \repo{https://github.com/hb-hello/cft-paxos/tree/main/stable-paxos}
+    \notes{https://github.com/hb-hello/cft-paxos/tree/main/stable-paxos#notes}
+    \resumeItem{Implemented a crash fault tolerant distributed banking system that uses a variant of Multi-Paxos protocol to replicate a transaction log and maintain consistent account balances across a 5-node cluster.}
+\end{project}
+
+\begin{project}[linear-pbft]
+  {Practical Byzantine Fault Tolerance (PBFT) Protocol}{}{September 2025 -- October 2025}
+    \tech{Java}
+    \repo{https://github.com/hb-hello/linear-pbft}
+    \notes{https://github.com/hb-hello/linear-pbft?tab=readme-ov-file#notes}
+    \resumeItem{Developed a high-throughput PBFT consensus protocol in Java featuring a collector node pattern to reduce communication overhead as well as prune message logs with Checkpointing and Threshold Signatures.}
+    \resumeItem{Wrote extensive test cases to simulate network partitions, timing attacks, and equivocation, ensuring the protocol recovered correctly from Byzantine failures.}
+\end{project}

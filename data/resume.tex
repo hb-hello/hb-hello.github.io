@@ -1,0 +1,246 @@
+%-------------------------
+% Resume in Latex
+% Author : Jake Gutierrez
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage[normalem]{ulem} % \uline for links; normalem keeps \emph italic
+
+
+%----------FONT----------
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
+\setsansfont{Times New Roman}
+\setmonofont{Times New Roman}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Tectonic's XeTeX engine handles Unicode text mapping without pdfTeX primitives.
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{{\tiny\textbullet}}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------
+% Content macros
+% scripts/sync-resume.js parses the document body into website entries.
+% Inside \begin{document}, stick to these macros plus inline \textbf,
+% \textit, \emph, \underline, \href, \resumeLink, \textbar{}, \%, \&, --, ~ and \\.
+% Every entry gets an [id]; the website places entries by that id.
+%
+%   \begin{entries} ... \end{entries}                 list of entries in a section
+%   \education[id]{school}{location}{degree}{dates}
+%   \begin{job}[id]{title}{org}{location}{dates}      \resumeItem{...} ... \end{job}
+%   \begin{project}[id]{name}{org}{dates}             \resumeItem{...} ... \end{project}
+%   \begin{skills}[id] \skill{category}{items} ... \end{skills}
+%
+% Optional fields, mostly website-only. Put them inside a job or project
+% right after its heading, before its \resumeItems:
+%   \tech{languages}  \repo{url}  \notes{url}  \location{place} (projects only)
+% Only \repo shows on the PDF: a project's heading gets " | Git Repo" linking
+% to it. Write % in a url as \%; a \repo url can't contain #.
+\newenvironment{entries}{\resumeSubHeadingListStart}{\resumeSubHeadingListEnd}
+\newcommand{\education}[5][]{\resumeSubheading{#2}{#3}{#4}{#5}}
+\newenvironment{job}[5][]{\resumeSubheading{#2}{#5}{#3}{#4}\resumeItemListStart}{\resumeItemListEnd}
+\newenvironment{skills}[1][]{\begin{itemize}[leftmargin=0.15in, label={}]\small\begingroup\item\begingroup\gdef\skillsep{}}{\endgroup\endgroup\end{itemize}}
+\newcommand{\skill}[2]{\skillsep\textbf{#1}{: #2}\gdef\skillsep{\\}}
+
+\definecolor{linkblue}{rgb}{0.0, 0.27, 0.65}
+% Blue link text with a thin underline close to the baseline:
+%   \resumeLink[size]{url}{text}   size is optional, e.g. \footnotesize
+\newcommand{\resumeLink}[3][]{\href{#2}{#1\color{linkblue}%
+  \setlength{\ULdepth}{1.2pt}\renewcommand{\ULthickness}{0.4pt}\uline{#3}}}
+
+\makeatletter
+% The fields print nothing where they appear. Each body is different so the
+% project scanner below can tell them apart with \@ifnextchar.
+\newcommand{\tech}[1]{\@gobble{tech}}
+\newcommand{\repo}[1]{\@gobble{repo}}
+\newcommand{\notes}[1]{\@gobble{notes}}
+\newcommand{\location}[1]{\@gobble{location}}
+
+% \begin{project} reads the field commands that follow its heading arguments,
+% keeping \repo's url, then typesets the heading.
+\newenvironment{project}[4][]{%
+  \def\project@args{{#2}{#3}{#4}}\def\project@repo{}\project@scan
+}{\resumeItemListEnd}
+\def\project@scan{%
+  \@ifnextchar\repo{\project@takerepo}{%
+  \@ifnextchar\tech{\project@skip}{%
+  \@ifnextchar\notes{\project@skip}{%
+  \@ifnextchar\location{\project@skip}{%
+  \expandafter\project@heading\project@args}}}}}
+\def\project@takerepo\repo#1{\def\project@repo{#1}\project@scan}
+\def\project@skip#1#2{\project@scan}
+\def\project@heading#1#2#3{%
+  \resumeProjectHeading{\textbf{#1} \textbar{} \emph{#2}%
+    \ifx\project@repo\@empty\else{} \textbar{} \resumeLink[\footnotesize]{\project@repo}{Github repo}\fi}{#3}%
+  \resumeItemListStart}
+\makeatother
+
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    \textbf{\Huge \scshape Hritwik Biyani} \\ \vspace{1pt}
+    \small New York, NY \textbar{} \resumeLink{mailto:biyanihritwik@gmail.com}{biyanihritwik@gmail.com} \textbar{} 
+    \resumeLink{https://linkedin.com/in/hritwikbiyani}{linkedin.com/in/hritwikbiyani} \textbar{}
+    \resumeLink{https://github.com/hb-hello}{github.com/hb-hello} \textbar{}
+    \resumeLink{https://hb-hello.github.io}{hb-hello.github.io}
+\end{center}
+
+
+%-----------EDUCATION-----------
+\section{EDUCATION}
+  \begin{entries}
+    \education[sbu-ms]
+      {Stony Brook University}{Stony Brook, New York}
+      {Master of Science in Computer Science (GPA: 4.0/4.0)}{August 2025 -- January 2027}
+    \education[mitwpu-btech]
+      {MIT World Peace University}{Pune, India}
+      {Bachelor of Technology in Computer Science}{July 2017 -- July 2021}
+  \end{entries}
+
+
+%-----------EXPERIENCE-----------
+\section{EXPERIENCE}
+  \begin{entries}
+
+    \begin{job}[intuit-swe-intern]
+      {Software Engineer Intern}{Intuit}{New York, NY}{June 2026 -- August 2026}
+        \resumeItem{Implemented inline task editing with a publish-subscribe system to guard unsaved changes across multiple pages; deployed to approximately 1.9M users}
+        \resumeItem{Built reusable data pipelines and observability to support optimization of a LightGBM quick-action recommendation model on the QuickBooks home page, reducing p95 latency from approximately 640ms to 140ms}
+        \resumeItem{Developed a real-time notification tray and email notification service for task management in Python using AWS DynamoDB, SQS, EventBridge, and Numaflow; served approximately 300K users in a pilot}
+    \end{job}
+
+    \begin{job}[zs-senior-de]
+      {Senior Data Engineer}{ZS Associates}{Pune, India}{July 2023 -- July 2025}
+        \resumeItem{Engineered a fault-tolerant ingestion service integrating 40+ sources across REST APIs, FTP, and SQL, with structured error handling and retry logic; reduced time to production for new data sources by 4--5 weeks}
+        \resumeItem{Designed an event-driven data governance system using serverless functions and asynchronous triggers, with approval workflows and audit logging for data change requests; enabled approximately 12x growth in data ingested}
+        \resumeItem{Built agentic workflows for an account management service to research and populate customer-account news insights and SWOT analyses, using user-specific context management and dynamic prompts}
+    \end{job}
+
+    \begin{job}[zs-de]
+      {Data Engineer}{ZS Associates}{Pune, India}{July 2021 -- June 2023}
+        \resumeItem{Built a Node.js backend for real-time contracting scenario analysis, processing tens of thousands of rows with configurable algorithms to optimize contract selection and increase ROI by 30\%+}
+        \resumeItem{Developed a lazy-loaded graph visualization tool using D3.js and Neo4j, with optimized Cypher queries to render complex health system hierarchies through traversals across 10,000+ nodes}
+    \end{job}
+
+  \end{entries}
+
+
+%-----------PROJECTS-----------
+\section{PROJECTS}
+    \begin{entries}
+      \begin{project}[sbu-ra]
+          {Graduate Research Assistant}{Stony Brook University}{February 2026 -- Present}
+            \location{Stony Brook, NY}
+            \resumeItem{Implemented and formally verified the Stellar Consensus Protocol for a decentralized blockchain network using DistAlgo, a Python-based research language for distributed systems}
+            \resumeItem{Developed a degree-planning constraint solver in Python using OR-Tools and DOcplex, with automated testing and benchmarking to compare against Prolog and clingo approaches for research analysis}
+      \end{project}
+      \begin{project}[sbunix]
+          {SBUnix Operating System Kernel}{Stony Brook University}{February 2026 -- Present}
+            \resumeItem{Built an operating system kernel from scratch in C and Assembly, contributing file systems, terminal functionality, and memory allocators}
+            \resumeItem{Developed a custom MicroPython port for the operating system}
+      \end{project}
+      \begin{project}[sharded-db]
+          {Sharded Transactional Database (2PC + Paxos)}{Stony Brook University}{October 2025 -- December 2025}
+            \tech{Java}
+            \repo{https://github.com/hb-hello/2pc-paxos}
+            \notes{https://github.com/hb-hello/2pc-paxos?tab=readme-ov-file#notes}
+            \resumeItem{Built a distributed key-value store in Java supporting cross-shard ACID transactions and linearizable consistency}
+            \resumeItem{Implemented Multi-Paxos replication with cluster reconfiguration and two-phase commit for cross-shard transactions}
+            \resumeItem{Achieved 5,000+ transactions per second under concurrent workloads through iterative optimization guided by logging and monitoring}
+      \end{project}
+    \end{entries}
+
+
+%-----------TECHNICAL SKILLS-----------
+\section{TECHNICAL SKILLS}
+ \begin{skills}[skills]
+     \skill{Programming Languages}{Python, Java, TypeScript, JavaScript, C, Bash, GraphQL}
+     \skill{Skills}{Data Structures, CI/CD, API Design, Abstraction, Operating Systems, Observability, Agile Principles, Reliable Systems}
+     \skill{Tools / Frameworks}{Git, React, AWS, Kafka, Spring Boot, Snowflake, Node.js, Flask, Docker, PostgreSQL, MySQL}
+     \skill{AI skills}{MCP Server, Prompt Engineering, AI Workflows, LangChain, ollama, Harness Engineering}
+ \end{skills}
+
+
+%-------------------------------------------
+\end{document}

@@ -1,0 +1,128 @@
+---
+title: mort.
+---
+{% extends "base.njk" %}
+{% import "components.njk" as ui %}
+
+{% block main %}
+    <main class="container">
+
+        <!-- About -->
+        <section id="about">
+            <h3>About</h3>
+            <p>Software Engineer | Student | Reader | Tinkerer
+            </p>
+            <!-- <p>Currently, I am a graduate student at <em data-tooltip="🌐 Stony Brook, NY">Stony Brook -->
+            <!--         University</em> majoring in computer science with the intention to delve deeper into systems and -->
+            <!--     work on some cool research along the way.</p> -->
+            <!-- <p>Previously, I was a senior data engineer at <em data-tooltip="🌐 Pune, India">ZS Associates</em> -->
+            <!--     developing data products and web apps for pharmaceutical organizations.</p> -->
+        </section>
+
+        <hr>
+
+        <!-- Work Experience -->
+        <section id="work-experience">
+            <h3>Work Experience</h3>
+
+            {# resume:answering-legal-swe-intern #}
+            {% call ui.entry({
+                title: "Software Engineer Intern (Part-time)",
+                org: "Answering Legal",
+                location: "New York, NY (Remote)",
+                dates: "September 2026 – Present"
+            }) %}
+                <li>Building an AI evaluator that analyses the trend of caller sentiment over virtual receptionist phone calls</li>
+            {% endcall %}
+            {# /resume:answering-legal-swe-intern #}
+
+            {# resume:intuit-swe-intern #}
+            {% call ui.entry({
+                title: "Software Engineer Intern",
+                org: "Intuit",
+                location: "New York, NY",
+                dates: "June 2026 – August 2026"
+            }) %}
+                <li>Implemented inline task editing with a publish-subscribe system to guard unsaved changes across multiple pages; deployed to approximately 1.9M users</li>
+                <li>Built reusable data pipelines and observability to support optimization of a LightGBM quick-action recommendation model on the QuickBooks home page, reducing p95 latency from approximately 640ms to 140ms</li>
+                <li>Developed a real-time notification tray and email notification service for task management in Python using AWS DynamoDB, SQS, EventBridge, and Numaflow; served approximately 300K users in a pilot</li>
+            {% endcall %}
+            {# /resume:intuit-swe-intern #}
+
+            {# resume:sbu-ra as=entry #}
+            {% call ui.entry({
+                title: "Graduate Research Assistant",
+                org: "Stony Brook University",
+                location: "Stony Brook, NY",
+                dates: "February 2026 – Present"
+            }) %}
+                <li>Implemented and formally verified the Stellar Consensus Protocol for a decentralized blockchain network using DistAlgo, a Python-based research language for distributed systems</li>
+                <li>Developed a degree-planning constraint solver in Python using OR-Tools and DOcplex, with automated testing and benchmarking to compare against Prolog and clingo approaches for research analysis</li>
+            {% endcall %}
+            {# /resume:sbu-ra #}
+
+            {# resume:sbu-ta #}
+            {% call ui.entry({
+                title: "Teaching Assistant",
+                org: "Stony Brook University",
+                location: "Stony Brook, NY",
+                dates: "September 2025 – December 2025"
+            }) %}
+                <li>Worked as a teaching assistant for <em>CSE 337 - Scripting Languages</em>, which involves proctoring and grading student examinations.</li>
+                <li>Conducted regular office hours to clarify students' doubts and grade scripting assignments.</li>
+            {% endcall %}
+            {# /resume:sbu-ta #}
+
+            {# resume:zs-senior-de #}
+            {% call ui.entry({
+                title: "Senior Data Engineer",
+                org: "ZS Associates",
+                location: "Pune, India",
+                dates: "July 2023 – July 2025"
+            }) %}
+                <li>Engineered a fault-tolerant ingestion service integrating 40+ sources across REST APIs, FTP, and SQL, with structured error handling and retry logic; reduced time to production for new data sources by 4–5 weeks</li>
+                <li>Designed an event-driven data governance system using serverless functions and asynchronous triggers, with approval workflows and audit logging for data change requests; enabled approximately 12x growth in data ingested</li>
+                <li>Built agentic workflows for an account management service to research and populate customer-account news insights and SWOT analyses, using user-specific context management and dynamic prompts</li>
+            {% endcall %}
+            {# /resume:zs-senior-de #}
+
+            {# resume:zs-de #}
+            {% call ui.entry({
+                title: "Data Engineer",
+                org: "ZS Associates",
+                location: "Pune, India",
+                dates: "July 2021 – June 2023"
+            }) %}
+                <li>Built a Node.js backend for real-time contracting scenario analysis, processing tens of thousands of rows with configurable algorithms to optimize contract selection and increase ROI by 30%+</li>
+                <li>Developed a lazy-loaded graph visualization tool using D3.js and Neo4j, with optimized Cypher queries to render complex health system hierarchies through traversals across 10,000+ nodes</li>
+            {% endcall %}
+            {# /resume:zs-de #}
+
+            {# resume:analyticsdomain-intern #}
+            {% call ui.entry({
+                title: "Web Development Intern",
+                org: "AnalyticsDomain",
+                location: "Pune, India",
+                dates: "February 2020 – May 2020"
+            }) %}
+                <li>Designed and deployed Course and Event management applications with Python/Django, enhancing the user experience for 100+ users with JavaScript-driven features like interactive quizzes and charts.</li>
+            {% endcall %}
+            {# /resume:analyticsdomain-intern #}
+
+            {# resume:aarohan-pr #}
+            {% call ui.entry({
+                title: "PR Organizer",
+                org: "MIT-WPU Aarohan",
+                location: "Pune, India",
+                dates: "December 2017 – May 2019"
+            }) %}
+                <li>Consistently created engaging social media content using Adobe After Effects and CorelDraw, resulting in a 40% increase in follower count and online engagement</li>
+                <li>Publicised the cultural fest in public areas and other colleges in the city and enrolled participants for various competitions</li>
+                <li>Worked as a volunteer in Aarohan's Run for a Cause marathon which involved participation registration, distributing goodies, setting up directions along the route, etc.</li>
+            {% endcall %}
+            {# /resume:aarohan-pr #}
+
+        </section>
+
+    </main>
+{% endblock %}

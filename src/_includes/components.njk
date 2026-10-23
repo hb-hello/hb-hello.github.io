@@ -1,0 +1,91 @@
+{#- Components for page content. Bullets go in the {% call %} body as <li>s.
+    Synced resume entries call these too (see scripts/sync-resume.js).
+    Optional on both: tech, repo (url), repoLabel (link text; defaults to the
+    repo name in the url), notes (url). -#}
+
+{% macro techTag(p) -%}
+<ul style="--pico-color: var(--pico-muted-color)">
+    <i class="fa-solid fa-code" style="margin-right: 0.5em; font-size: medium;"></i>
+    <span>{{ p.tech | safe }}</span>
+</ul>
+{%- endmacro %}
+
+{% macro repoLink(p) -%}
+<i class="fa-brands fa-github" style="margin-right: 0.5em;"></i>
+<a href="{{ p.repo }}">{{ p.repoLabel or p.repo.split("/")[4] }}</a>
+{%- endmacro %}
+
+{% macro notesItem(p) -%}
+<li><a href="{{ p.notes }}" class="secondary"><i class="fa-solid fa-link"
+            style="margin-right: 0.25em; opacity: 0.8; font-size: medium;"></i>Notes</a></li>
+{%- endmacro %}
+
+{#- Role at an organization: title, org, location, dates -#}
+{% macro entry(p) %}
+<article>
+    <header>
+        <hgroup style="margin-bottom: 0;">
+            <em>{{ p.title | safe }} at <b>{{ p.org | safe }}</b></em>
+            <nav style="margin-left: 0.5em; margin-right: 0.5em;  margin-bottom: 0.1em;">
+                {%- if p.location %}
+                <ul><i class="fa-solid fa-location-dot" style="margin-right: 0.25em;"></i><span>{{ p.location | safe }}</span></ul>
+                {%- endif %}
+                {%- if p.tech %}
+                {{ techTag(p) }}
+                {%- endif %}
+                {%- if p.repo %}
+                <ul>{{ repoLink(p) }}</ul>
+                {%- endif %}
+                <ul>{{ p.dates | safe }}</ul>
+            </nav>
+        </hgroup>
+    </header>
+    <ul>
+        {{ caller() | trim | safe }}
+        {%- if p.notes %}
+        {{ notesItem(p) }}
+        {%- endif %}
+    </ul>
+</article>
+{% endmacro %}
+
+{#- Project card: title, dates -#}
+{% macro project(p) %}
+<article>
+    <header>
+        <hgroup style="margin-bottom: 0;">
+            <nav style="margin-left: 0.5em; margin-right: 0.5em; margin-bottom: 0.1em;">
+                <ul>
+                    <em>{{ p.title | safe }}</em>
+                </ul>
+                {%- if p.tech %}
+                {{ techTag(p) }}
+                {%- endif %}
+            </nav>
+            <nav style="margin-left: 0.5em; margin-right: 0.5em;">
+                <ul>
+                    {%- if p.repo %}
+                    {{ repoLink(p) }}
+                    {%- endif %}
+                </ul>
+                <ul>{{ p.dates | safe }}</ul>
+            </nav>
+        </hgroup>
+    </header>
+    <ul>
+        {{ caller() | trim | safe }}
+        {%- if p.notes %}
+        {{ notesItem(p) }}
+        {%- endif %}
+    </ul>
+</article>
+{% endmacro %}
+
+{#- Skills list; each <li> is "<b>category</b>: items" -#}
+{% macro skills(p) %}
+<article>
+    <ul>
+        {{ caller() | trim | safe }}
+    </ul>
+</article>
+{% endmacro %}

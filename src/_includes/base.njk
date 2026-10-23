@@ -1,3 +1,4 @@
+{%- set nav = [["/index.html", "about"], ["/timeline.html", "timeline"], ["/projects.html", "projects"], ["/resume.html", "resume"]] -%}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,12 +6,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="dev">
-    <title>timeline.</title>
+    <title>{{ title }}</title>
 
     <!-- Pico.css -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
     <link rel="stylesheet" href="styles/common.css">
-    <link rel="stylesheet" href="styles/timeline.css">
+    {%- block styles %}{% endblock %}
 
     <!-- Fontawesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
@@ -19,11 +20,7 @@
 
     <!-- Favicon -->
     <link rel="icon" href="assets/sea.ico" />
-
-    <!-- Scripts -->
-    <script src="scripts/Markdown.Converter.js"></script>
-    <script src="scripts/Markdown.Sanitizer.js"></script>
-    <script src="scripts/timeline.js"></script>
+    {%- block scripts %}{% endblock %}
 </head>
 
 <body>
@@ -31,43 +28,30 @@
     <!-- Header -->
     <header class="nav-header">
         <nav class="navbar">
-            <ul><strong>who am i?</strong></ul>
             <ul>
-                <li><a href="/index.html" class="secondary">about</a></li>
-                <li><a href="/timeline.html" class="primary">timeline</a></li>
-                <li><a href="/projects.html" class="secondary">projects</a></li>
-                <li><a href="/resume.html" class="secondary">resume</a></li>
+                {%- for href, label in nav %}
+                <li><a href="{{ href }}" class="{{ 'primary' if page.url == href or (page.url == '/' and href == '/index.html') else 'secondary' }}">{{ label }}</a></li>
+                {%- endfor %}
             </ul>
         </nav>
         <hr style="margin-bottom: 0;">
     </header>
 
     <!-- Main -->
-
-    <main class="container timeline">
-
-        <section class="timeline-section">
-            <div class="container timeline-container" id="timeline">
-                <!-- Timeline blocks will be injected from data/timeline.json -->
-            </div>
-        </section>
-
-    </main>
-
-    <hr style="margin-top: 0;">
+{% block main %}{% endblock %}
 
     <!-- Footer -->
     <footer class="container">
         <nav>
             <ul>
                 <li class="footer-icon"><a href="https://www.linkedin.com/in/hritwikbiyani/" class="secondary"><i
-                            class="fa-brands fa-linkedin"></i></li>
+                            class="fa-brands fa-linkedin"></i></a></li>
                 <li class="footer-icon"><a href="https://github.com/hb-hello" class="secondary"><i
-                            class="fa-brands fa-github"></i></li>
+                            class="fa-brands fa-github"></i></a></li>
                 <li class="footer-icon"><a href="mailto:biyanihritwik@gmail.com" class="secondary"><i
-                            class="fa-solid fa-envelope"></i></li>
+                            class="fa-solid fa-envelope"></i></a></li>
             </ul>
-            <ul><small>© 2026 Hritwik Biyani</small></ul>
+            <ul><small>© 2026 hb-hello</small></ul>
         </nav>
     </footer>
 

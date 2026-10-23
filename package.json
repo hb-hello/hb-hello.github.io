@@ -1,0 +1,14 @@
+{
+  "name": "hb-hello.github.io",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "sync": "node scripts/sync-resume.js",
+    "sync:check": "node scripts/sync-resume.js --check",
+    "dev": "eleventy --serve",
+    "build": "eleventy"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.7"
+  }
+}

@@ -1,0 +1,32 @@
+---
+title: timeline.
+permalink: timeline.html
+---
+{% extends "base.njk" %}
+
+{% block styles %}
+    <link rel="stylesheet" href="styles/timeline.css">
+{%- endblock %}
+
+{% block scripts %}
+
+    <!-- Scripts -->
+    <script src="js/Markdown.Converter.js"></script>
+    <script src="js/Markdown.Sanitizer.js"></script>
+    <script src="js/timeline.js"></script>
+{%- endblock %}
+
+{% block main %}
+
+    <main class="container timeline">
+
+        <section class="timeline-section">
+            <div class="container timeline-container" id="timeline">
+                <!-- Timeline blocks will be injected from data/timeline.json -->
+            </div>
+        </section>
+
+    </main>
+
+    <hr style="margin-top: 0;">
+{% endblock %}

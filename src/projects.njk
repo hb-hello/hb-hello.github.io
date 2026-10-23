@@ -1,0 +1,56 @@
+---
+title: projects.
+permalink: projects.html
+---
+{% extends "base.njk" %}
+{% import "components.njk" as ui %}
+
+{% block main %}
+    <main class="container">
+        <section id="projects">
+            <h3>Projects</h3>
+
+            {# resume:cft-paxos #}
+            {% call ui.project({
+                title: "Distributed Consensus Protocol - Paxos",
+                org: "",
+                dates: "August 2025 – September 2025",
+                tech: "Java",
+                repo: "https://github.com/hb-hello/cft-paxos/tree/main/stable-paxos",
+                notes: "https://github.com/hb-hello/cft-paxos/tree/main/stable-paxos#notes"
+            }) %}
+                <li>Implemented a crash fault tolerant distributed banking system that uses a variant of Multi-Paxos protocol to replicate a transaction log and maintain consistent account balances across a 5-node cluster.</li>
+            {% endcall %}
+            {# /resume:cft-paxos #}
+
+            {# resume:linear-pbft #}
+            {% call ui.project({
+                title: "Practical Byzantine Fault Tolerance (PBFT) Protocol",
+                org: "",
+                dates: "September 2025 – October 2025",
+                tech: "Java",
+                repo: "https://github.com/hb-hello/linear-pbft",
+                notes: "https://github.com/hb-hello/linear-pbft?tab=readme-ov-file#notes"
+            }) %}
+                <li>Developed a high-throughput PBFT consensus protocol in Java featuring a collector node pattern to reduce communication overhead as well as prune message logs with Checkpointing and Threshold Signatures.</li>
+                <li>Wrote extensive test cases to simulate network partitions, timing attacks, and equivocation, ensuring the protocol recovered correctly from Byzantine failures.</li>
+            {% endcall %}
+            {# /resume:linear-pbft #}
+
+            {# resume:sharded-db #}
+            {% call ui.project({
+                title: "Sharded Transactional Database (2PC + Paxos)",
+                org: "Stony Brook University",
+                dates: "October 2025 – December 2025",
+                tech: "Java",
+                repo: "https://github.com/hb-hello/2pc-paxos",
+                notes: "https://github.com/hb-hello/2pc-paxos?tab=readme-ov-file#notes"
+            }) %}
+                <li>Built a distributed key-value store in Java supporting cross-shard ACID transactions and linearizable consistency</li>
+                <li>Implemented Multi-Paxos replication with cluster reconfiguration and two-phase commit for cross-shard transactions</li>
+                <li>Achieved 5,000+ transactions per second under concurrent workloads through iterative optimization guided by logging and monitoring</li>
+            {% endcall %}
+            {# /resume:sharded-db #}
+        </section>
+    </main>
+{% endblock %}
